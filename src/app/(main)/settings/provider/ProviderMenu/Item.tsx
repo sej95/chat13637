@@ -12,7 +12,8 @@ export const useStyles = createStyles(({ css, token }) => ({
   container: css`
     cursor: pointer;
 
-    padding: 8px 12px;
+    padding-block: 8px;
+    padding-inline: 12px;
 
     border-radius: ${token.borderRadius}px;
 
@@ -28,7 +29,7 @@ const ProviderItem = memo<ModelProviderCard>(({ id, name }) => {
   const { styles } = useStyles();
   return (
     <Flexbox className={styles.container} gap={8} horizontal>
-      <ProviderIcon provider={id} size={24} />
+      <ProviderIcon provider={id} size={24} style={{ borderRadius: 6 }} />
       {name}
     </Flexbox>
   );
