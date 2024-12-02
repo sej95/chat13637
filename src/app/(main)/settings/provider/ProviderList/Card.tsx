@@ -82,6 +82,7 @@ const ProviderCard = memo<ProviderCardProps>(({ id, description, name }) => {
             style={{ color: theme.colorText }}
             title={name}
           />
+          {/*<SyncSwitch value={enabled} />*/}
           <Switch checked={enabled} size={'small'} />
         </Flexbox>
         {description && (
