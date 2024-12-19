@@ -34,7 +34,10 @@ export class ClientService extends BaseClientService implements IUserService {
     // if user not exist in the db, create one to make sure the user exist
     await this.makeSureUserExist();
 
-    const state = await this.userModel.getUserState();
+    const state = await this.userModel.getUserState((encryptKeyVaultsStr) =>
+      encryptKeyVaultsStr ? JSON.parse(encryptKeyVaultsStr) : {},
+    );
+
     const user = await UserModel.findById(clientDB as any, this.userId);
     const messageCount = await this.messageModel.count();
     const sessionCount = await this.sessionModel.count();
@@ -50,8 +53,10 @@ export class ClientService extends BaseClientService implements IUserService {
     };
   }
 
-  updateUserSettings = async (patch: DeepPartial<UserSettings>) => {
-    return this.userModel.updateSetting(patch as UserSettings);
+  updateUserSettings = async (value: DeepPartial<UserSettings>) => {
+    const { keyVaults, ...res } = value;
+
+    return this.userModel.updateSetting({ ...res, keyVaults: JSON.stringify(keyVaults) });
   };
 
   resetUserSettings = async () => {
