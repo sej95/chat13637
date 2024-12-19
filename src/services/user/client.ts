@@ -9,7 +9,6 @@ import { BaseClientService } from '@/services/baseClientService';
 import { UserGuide, UserInitializationState, UserPreference } from '@/types/user';
 import { UserSettings } from '@/types/user/settings';
 import { AsyncLocalStorage } from '@/utils/localStorage';
-import { uuid } from '@/utils/uuid';
 
 import { IUserService } from './type';
 
@@ -33,7 +32,6 @@ export class ClientService extends BaseClientService implements IUserService {
 
   async getUserState(): Promise<UserInitializationState> {
     // if user not exist in the db, create one to make sure the user exist
-    // and init the window.__lobeClientUserId
     await this.makeSureUserExist();
 
     const state = await this.userModel.getUserState();
@@ -73,19 +71,17 @@ export class ClientService extends BaseClientService implements IUserService {
     throw new Error('Method not implemented.');
   }
 
-  private async makeSureUserExist() {
+  async makeSureUserExist() {
     const existUsers = await clientDB.query.users.findMany();
 
     let user: { id: string };
     if (existUsers.length === 0) {
-      const result = await clientDB.insert(users).values({ id: uuid() }).returning();
+      const result = await clientDB.insert(users).values({ id: this.userId }).returning();
       user = result[0];
     } else {
       user = existUsers[0];
     }
 
-    if (typeof window !== 'undefined') {
-      window.__lobeClientUserId = user.id;
-    }
+    return user;
   }
 }

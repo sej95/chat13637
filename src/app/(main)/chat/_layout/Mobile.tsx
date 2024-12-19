@@ -5,9 +5,9 @@ import { Suspense, memo } from 'react';
 import { Flexbox } from 'react-layout-kit';
 
 import Migration from '@/app/(main)/chat/features/Migration';
+import InitClientDB from '@/features/InitClientDB';
 import { useQuery } from '@/hooks/useQuery';
 
-import InitClientDB from '../../../../features/InitClientDB';
 import { LayoutProps } from './type';
 
 const useStyles = createStyles(({ css, token }) => ({

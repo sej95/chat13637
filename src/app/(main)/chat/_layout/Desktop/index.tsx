@@ -1,6 +1,7 @@
 import { Flexbox } from 'react-layout-kit';
 
-import InitClientDB from '../../../../../features/InitClientDB';
+import InitClientDB from '@/features/InitClientDB';
+
 import Migration from '../../features/Migration';
 import { LayoutProps } from '../type';
 import SessionPanel from './SessionPanel';

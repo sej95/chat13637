@@ -12,12 +12,3 @@ declare module 'antd-style' {
 declare module 'styled-components' {
   export interface DefaultTheme extends AntdToken, LobeCustomToken {}
 }
-
-declare global {
-  interface Window {
-    /**
-     * 客户端 db 模式下的用户 id
-     */
-    __lobeClientUserId?: string;
-  }
-}
