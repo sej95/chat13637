@@ -55,7 +55,7 @@ src
 1. **获取代码**：克隆 LobeChat 的代码库到本地：
 
 ```bash
-git clone https://github.com/lobehub/lobe-chat.git
+git clone https://github.com/iuaihub/iuai-chat.git
 ```
 
 2. **安装依赖**：进入项目目录，并安装所需依赖：
@@ -104,8 +104,8 @@ LobeChat 采用 `i18next` 和 `lobe-i18n` 实现多语言支持，确保用户�
 
 ## 附录：资源与参考
 
-为了支持开发者更好地理解和使用 LobeChat 的技术栈，我们提供了一份详尽的资源与参考列表 —— [LobeChat 资源与参考](https://github.com/lobehub/lobe-chat/wiki/Resources.zh-CN) - 访问我们维护的资源列表，包括教程、文章和其他有用的链接。
+为了支持开发者更好地理解和使用 LobeChat 的技术栈，我们提供了一份详尽的资源与参考列表 —— [LobeChat 资源与参考](https://github.com/iuaihub/iuai-chat/wiki/Resources.zh-CN) - 访问我们维护的资源列表，包括教程、文章和其他有用的链接。
 
-我们鼓励开发者利用这些资源深入学习和提升技能，通过 [LobeChat GitHub Discussions](https://github.com/lobehub/lobe-chat/discussions) 或者 [Discord](https://discord.com/invite/AYFPHvv2jT) 加入社区讨论，提出问题或分享你的经验。
+我们鼓励开发者利用这些资源深入学习和提升技能，通过 [LobeChat GitHub Discussions](https://github.com/iuaihub/iuai-chat/discussions) 或者 [Discord](https://discord.com/invite/AYFPHvv2jT) 加入社区讨论，提出问题或分享你的经验。
 
 如果你有任何疑问，或者需要进一步的帮助，请不要犹豫，请通过上述渠道与我们联系。
