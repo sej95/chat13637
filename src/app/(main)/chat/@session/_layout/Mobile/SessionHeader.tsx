@@ -23,7 +23,7 @@ const Header = memo(() => {
     <MobileNavBar
       left={
         <Flexbox align={'center'} gap={8} horizontal style={{ marginLeft: 8 }}>
-          <UserAvatar onClick={() => router.push('/me')} size={32} />
+          <UserAvatar onClick={() => router.push('/me')} size={0} />
           <ProductLogo extra={'Chat'} size={0} type={'mono'} />
           {enableWebrtc && <SyncStatusInspector placement={'bottom'} />}
         </Flexbox>
